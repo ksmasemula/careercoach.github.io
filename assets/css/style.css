@@ -501,7 +501,8 @@ section {
 }
 .about .content .about-btn {
   padding: 8px 30px 9px 30px;
-  color: rgb(0, 0, 0);
+  background-color: #111;
+  color: #fff;
   border-radius: 50px;
   transition: 0.3s;
   text-transform: uppercase;
@@ -599,11 +600,11 @@ section {
 }
 .tabs .nav-link {
   border: 1px solid #b9b9b9;
-  padding: 15px;
+  padding: 5px;
   transition: 0.3s;
   color: #111111;
   border-radius: 0;
-  display: flex;
+  display: right;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -1803,97 +1804,109 @@ section {
 
 /* modal */
 
-:root {
-  --modal-duration: 1s;
-  --modal-color: #c6a47e;
-}
-
-
-
-.button {
-  background: #c6a47e;
-  padding: 1em 2em;
-  color: #fff;
-  border-radius: 50px;
-  transition: 0.3s;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 13px;
-  display: inline-flex;
-  align-items: center;
-  border: 2px solid #c59660;
-}
-
-.button:hover {
-  background: #000000;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-  margin: 10% auto;
-  width: 60%;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
-  animation-name: modalopen;
-  animation-duration: var(--modal-duration);
-}
-
-.modal-header h2,
-.modal-footer h3 {
-  margin: 0;
-}
-
-.modal-header {
-  background: var(--modal-color);
-  padding: 15px;
-  color: #fff;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.modal-body {
-  padding: 10px 20px;
-  background: rgb(143, 143, 143);
-}
-
-.modal-footer {
-  background: var(--modal-color);
-  padding: 3px;
-  color: #fff;
+.popup .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-150%) scale(0);
+  width: 300px;
+  height: 450px;
+  z-index: 2;
   text-align: center;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.close {
-  color: #ccc;
-  float: right;
+  padding: 20px;
+  border-radius: 20px;
+  background: #262626;
+  box-shadow:  38px 38px 56px #1e1e1e, 
+              -25px -25px 38px #1e1e1e;
+  z-index: 1;
+ }
+ 
+ .popup .close-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  color: white;
   font-size: 30px;
-  color: #fff;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-@keyframes modalopen {
-  from {
-    opacity: 0;
+  border-radius: 50%;
+  padding: 2px 5px 7px 5px;
+  background: #292929;
+  box-shadow:  5px 5px 15px #1e1e1e, 
+              -5px -5px 15px #1e1e1e;
   }
-  to {
-    opacity: 1;
-  }
-}
+ 
+ .popup.active .content {
+ transition: all 300ms ease-in-out;
+ transform: translate(-50%,-50%) scale(1);
+ }
+ 
+ h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  padding-top: 20px;
+  padding-bottom: 10px;
+ }
+ 
+ a {
+  font-weight: 600;
+  color: white;
+ }
+ 
+ .input-field .validate {
+ padding: 20px;
+ font-size: 16px;
+ border-radius: 10px;
+ border: none;
+ margin-bottom: 15px;
+ color: #bfc0c0;
+ background: #262626;
+ box-shadow: inset 5px 5px 5px #232323, 
+             inset -5px -5px 5px #292929;
+ outline: none;
+ }
+ 
+ .first-button {
+ color: white;
+ font-size: 18px;
+ font-weight: 500;
+ padding: 30px 50px;
+ border-radius: 40px;
+ border: none;
+
+ background: #262626;
+ box-shadow:  18px 18px 25px #1e1e1e, 
+              -15px -15px 25px #1e1e1e;
+ transition: box-shadow .35s ease !important;
+ outline: none;
+ }
+ 
+ .first-button:active {  
+ background: linear-gradient(145deg, #222222, #292929);
+ box-shadow:  5px 5px 10px #262626, 
+              -5px -5px 10px #262626;
+ border: none;
+ }
+ 
+ .second-button {
+ color: white;
+ font-size: 18px;
+ font-weight: 500;
+ margin-top: 20px;
+ padding: 20px 30px;
+ border-radius: 40px;
+ border: none;
+ background: #262626;
+ box-shadow:  8px 8px 15px #202020, 
+              -8px -8px 15px #2c2c2c;
+ transition: box-shadow .35s ease !important;
+ outline: none;
+ }
+ 
+ .second-button:active{
+ background: linear-gradient(145deg,#222222, #292929);
+ box-shadow: 5px 5px 10px #262626, -5px -5px 10px #262626;
+ border: none;
+ outline: none;
+ }
