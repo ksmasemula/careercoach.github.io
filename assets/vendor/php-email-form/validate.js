@@ -53,7 +53,8 @@
     fetch(action, {
       method: 'POST',
       body: formData,
-      headers: {'X-Requested-With': 'XMLHttpRequest'}
+      mode: 'cors',
+      headers: {}
     })
     .then(response => {
       if( response.ok ) {
